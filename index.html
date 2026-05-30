@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Guide — Grades 1–10</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="home-page" class="page home-page">
+    <div class="home-card">
+      <div class="home-content">
+        <span class="home-badge">WELCOME</span>
+        <h1 class="home-title">Welcome to Our Study Guide App</h1>
+        <p class="home-copy">A soft, friendly learning space for every grade. Tap below to begin your study journey with beautiful animation and helpful guidance.</p>
+        <button id="enter-app" class="home-button">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects-page" class="page hidden">
+    <div class="container">
+      <button id="subjects-back" class="page-back">← Back</button>
+      <div class="subjects-header">
+        <h2 id="subjects-title">Choose Your Grade</h2>
+        <p id="subjects-subtitle">Select a grade and syllabus to open your study guide.</p>
+      </div>
+      <div class="controls selection-controls">
+        <label for="onboard-grade" class="sr-only">Select Grade</label>
+        <select id="onboard-grade" aria-label="Select grade">
+          <option value="" selected disabled>Select Grade</option>
+        </select>
+        <label for="onboard-syllabus" class="sr-only">Select syllabus</label>
+        <select id="onboard-syllabus" aria-label="Select syllabus">
+          <option value="generic">Generic</option>
+          <option value="cbse">CBSE</option>
+          <option value="icse">ICSE</option>
+          <option value="state">State</option>
+        </select>
+        <button id="start-btn" type="button" class="start-button">View Subjects</button>
+      </div>
+      <div id="subject-buttons" class="subject-buttons hidden"></div>
+    </div>
+  </section>
+
+  <section id="detail-page" class="page hidden detail-page">
+    <div class="detail-wrap">
+      <button id="detail-back" class="page-back">← Back to subjects</button>
+      <div class="detail-card">
+        <div class="detail-header">
+          <h2 id="detail-title">Subject</h2>
+          <p id="detail-subtitle">Learn more about the topic and add your own specific focus.</p>
+        </div>
+        <div id="detail-info" class="detail-info">Select a subject to begin.</div>
+        <div class="topic-search">
+          <label for="topic-text">Search a topic</label>
+          <div class="topic-row">
+            <input id="topic-text" placeholder="e.g., plant cell structure" />
+            <button id="map-topic">Show topic</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating more topics -->
+  <div id="more-topics" class="more-topics" aria-hidden="false">
+    <button id="more-toggle" class="more-toggle">⋯</button>
+    <div id="more-list" class="more-list hidden"></div>
+  </div>
+
+  <!-- Doubt / Ask full-screen modal -->
+  <div id="doubt-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Ask a doubt">
+    <div class="modal-body doubt-body">
+      <button id="doubt-close" class="modal-close">← Back</button>
+      <div class="doubt-header">
+        <h3>Ask a doubt</h3>
+        <p>Type anything and the study guide will help you explore the concept.</p>
+      </div>
+      <div class="doubt-input-row">
+        <input id="doubt-input" placeholder="Ask a question or search a topic" />
+        <button id="doubt-search">Ask AI</button>
+      </div>
+      <div id="doubt-results" class="doubt-results"></div>
+    </div>
+  </div>
+
+  <button id="doubt-btn" class="doubt-btn" aria-label="Ask a doubt">?</button>
+
+  <footer class="container footer">
+    <p>Content sourced from public knowledge (Wikipedia). Use as a starting guide, not a substitute for class materials.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
